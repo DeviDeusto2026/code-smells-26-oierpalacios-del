@@ -16,7 +16,7 @@ public class CoinSpawner : MonoBehaviour
     {
         for (int i = 0; i < coinAmount; i++)
         {
-            var go = Instantiate<GameObject>(prefab);
+            GameObject go = Instantiate(prefab);
 
             float x = Random.Range(minX, maxX);
             float y = 0.5f;

@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
 
-    public float rotateSpeed = 360;
+    public float rotateSpeed;
 
     private AudioSource audioSource;
 

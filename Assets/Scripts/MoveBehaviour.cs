@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveBehaviour : MonoBehaviour
@@ -23,13 +21,13 @@ public class MoveBehaviour : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
         {
             // Move backward
-            playerRigidbody.MovePosition(transform.position + transform.forward * mS * Time.deltaTime * -1);
+            playerRigidbody.MovePosition(transform.position - transform.forward * mS * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             // Rotate left
-            playerRigidbody.MoveRotation(Quaternion.Euler(transform.localRotation.eulerAngles + Vector3.up * rS * Time.deltaTime * -1));
+            playerRigidbody.MoveRotation(Quaternion.Euler(transform.localRotation.eulerAngles - Vector3.up * rS * Time.deltaTime));
         }
 
         if (Input.GetKey(KeyCode.D))
