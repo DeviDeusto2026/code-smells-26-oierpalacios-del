@@ -16,13 +16,13 @@ public class CoinSpawner : MonoBehaviour
     {
         for (int i = 0; i < coinAmount; i++)
         {
-            GameObject go = Instantiate(prefab);
+            GameObject gameObject = Instantiate(prefab);
 
             float x = Random.Range(minX, maxX);
             float y = 0.5f;
             float z = Random.Range(minZ, maxZ);
 
-            go.transform.position = new Vector3(x, y, z);
+            gameObject.transform.position = new Vector3(x, y, z);
         }
     }
 
