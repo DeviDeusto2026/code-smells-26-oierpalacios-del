@@ -4,12 +4,14 @@ public class JB : MonoBehaviour
 {
 
     public Rigidbody playerRigidbody;
+    private int jumpForce = 400;
 
     private int groundCollisions;
+    string nombre = "Ground";
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer(nombre))
         {
             groundCollisions++;
         }
@@ -17,7 +19,7 @@ public class JB : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer(nombre))
         {
             groundCollisions--;
         }
@@ -29,8 +31,7 @@ public class JB : MonoBehaviour
 
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
-            Vector3 jumpVector = new Vector3(0,1,0) * 400;
-            playerRigidbody.AddForce(jumpVector);
+            playerRigidbody.AddForce(Vector3.up * jumpForce);
         }
     }
 
